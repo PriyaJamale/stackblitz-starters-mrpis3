@@ -46,7 +46,7 @@ app.get('/calculate-tax', (req, resp) => {
   resp.send(tax.toString());
 });
 
-function delivery_time((shippingMethod,distance){
+function delivery_time(shippingMethod,distance){
   let day;
   if(shippingMethod=='standard'){
     day=distance/50;
@@ -64,14 +64,14 @@ app.get('/estimate-delivery', (req, resp) => {
   resp.send(deliveryTime(shippingMethod,distance))
 });
 
-app.get('/shipping-cost',(req,resp)=>){
+app.get('/shipping-cost',(req,resp)=>{
   let weight=parseFloat(req.query.weight);
   let distance=parseFloat(req.query.distance);
-  let shippingCost=weight * distance * 0.1
+  let shippingCost=weight * distance * 0.1;
   resp.send(shippingCost.toString());
-}
-app.get('/loyalty-points',(req,resp)=>){
+});
+app.get('/loyalty-points',(req,resp)=>{
   purchaseAmount=parseFloat(req.query.purchaseAmount);
   resp.send((purchaseAmount*2).toString());
-}
+});
 
