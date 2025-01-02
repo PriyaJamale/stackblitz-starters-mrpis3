@@ -19,7 +19,7 @@ let loyaltyRate = 2;
 app.get('/cart-total', (req, resp) => {
   let newItemPrice = parseFloat(req, query.newItemPrice);
   let cartTotal = parseFloat(req.query.cartTotal);
-  resp.send(cartTotal);
+  resp.send(cartTotal.toString());
 });
 
 app.listen(port, () => {
