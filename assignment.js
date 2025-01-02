@@ -8,18 +8,18 @@ let taxRate = 5;
 let discountPercentage = 10;
 let loyaltyRate = 2;
 
-function calculateTotalCartPrice(newItemPrice, cartTotal) {
-  if (cartTotal == 0) {
-    return newItemPrice.toString();
-  } else {
-    let totalCartPrice = newItemPrice * cartTotal;
-    return totalCartPrice.toString();
-  }
-}
+//function calculateTotalCartPrice(newItemPrice, cartTotal) {
+  //if (cartTotal == 0) {
+  //  return newItemPrice.toString();
+  //} else {
+   // let totalCartPrice = newItemPrice * cartTotal;
+   // return totalCartPrice.toString();
+ // }
+//}
 app.get('/cart-total', (req, resp) => {
   let newItemPrice = parseFloat(req, query.newItemPrice);
   let cartTotal = parseFloat(req.query.cartTotal);
-  resp.send(calculateTotalCartPrice(newItemPrice, cartTotal));
+  resp.send(cartTotal);
 });
 
 app.listen(port, () => {
